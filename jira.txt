@@ -1,0 +1,35 @@
+ETL : Extract,Transform,Load 
+method used to move and prepare data from multiple sources into a centralized system
+like a data warehouse or data lake for analysis and reporting
+
+JIRA : 
+a project mgmt tool - tracking and managing work
+can integrate with other tools 
+key features: 
+1. Robust project mgmt tools 
+  - can create projects
+  - set up workflows
+  - assign tasks
+  - track progress 
+all in one place
+2. Includes a range of visualization and reporting tools
+
+terms in jira:
+-EPIC : Tells you what the project is about
+-STORIES: Epics are divided into stories - which tells us what we need to do to achieve the epic
+-TASKS : Stories are divided into taks- what we need to do to finish the story
+
+Workflows in Jira
+
+- todo
+- in progress
+- testing
+- done
+
+scrum template= ?
+sprint =?
+
+Agile is the umbrella concept, and Scrum and Kanban are two different ways to implement it
+Scrum – Structured Agile Framework
+Kanban – Visual Flow Framework
+Kanban is a continuous flow system that focuses on visualizing work and limiting work-in-progress (WIP).
