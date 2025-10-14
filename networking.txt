@@ -12,7 +12,111 @@ ACME - 10.X.X.X (owns)
 subnet - ?
 
 Network - connection bw hosts
-logical grouping of hosts which require similar connectivity
+logical grouping of hosts which require similar connectivity -  forms a subnet or LAN segment, where all hosts share the same IP subnet, but each host has a unique IP address.
 networks can contain other networks called subnets
 network connect to other network -  internet
 
+devices: 
+
+Repeater: device used for regeneration
+A repeater is a device that receives a weak or distorted signal,
+cleans it up (amplifies and reshapes it), and retransmits it at its original strength and quality
+it operates in layer1 - physical layer
+
+Hub - Bridge - Switch : all acts a centre point where all hosts will be connected
+
+Hub : is a mulitport repeater 
+everyhost recieves data from every other hosts which brings us to bridges
+
+Bridge  - has only two ports (layer2)
+A bridge connects two or more LANs to act as a single network, while filtering traffic intelligently
+- two sets of hosts connected using hub 
+- h1 h2 h3 connected to hub1  --------- BRIDGE----------- h4 h5 h6 -> hub2
+
+Switch: hub+switch kindof - facilitates communication within network - layer2 - MAC address
+Routers: facilitate communication between networks - layer3 - ip addresses
+
+Access Point-The wireless connector -  layer 2
+Job: Connects wireless devices (phones, laptops) to the wired network (LAN).
+Use case:
+Wi-Fi in your home — your phone connects to the AP, which connects to the switch/router
+-------------
+Application → Presentation → Session:
+WhatsApp prepares your message (text, emoji, image) → encrypts → opens secure session with WhatsApp server.
+
+Transport Layer: (service to service) 
+Data broken into TCP segments (reliable delivery ensured).
+->ensures that the right programs recieves the right packets (service to service)
+-> Addressing scheme : ports (0-65535) TCP/UDP 
+
+
+Network Layer: (end to end)
+Each segment gets an IP address to reach the destination server.
+L3 tech: Anything with IP
+
+Data Link Layer: (hop to hop)
+Packets are turned into Ethernet/Wi-Fi frames that can move through your local network via switches and routers.
+-> interacts with the wire in L1
+   eg : NIC or WiFi access cards
+-> Addressing scheme :MAC address
+
+Physical Layer:
+Frames become electrical signals or Wi-Fi radio waves — physically transmitted to your router and out to the Internet.
+->transfer of bits; L1 Technologies:  cables,wifi,repeater,hub
+
+Reverse Process (on receiver’s side):
+The layers unpack the data in reverse order — physical → data link → network → transport → session → presentation → application.
+Finally, WhatsApp decrypts the data and shows the message on your friend’s screen
+-------
+* why are ip and mac addresses required?
+* All networking devices connect hosts, but each one works at a different OSI layer, and thus plays a different role in how the data moves — physically, logically, and intelligently.
+
+OSI MODEL:
+
+Hosts must follow a set of rules in a nw.
+Rules of Networking are divided inot 7 different layers
+Each layer servers a specific function
+
+##
+Why We Need Both IP and MAC Addresses in Networking
+In computer networking, two types of addresses play crucial roles: IP addresses and MAC addresses. While they may seem similar, they serve distinct purposes at different layers of the OSI model — and both are essential for successful data transmission.
+
+ Layer 2: MAC Addresses (Data Link Layer)
+MAC (Media Access Control) address is a physical address hardcoded into a device’s network interface card (NIC).
+It is used for local communication within the same network (LAN).
+MAC addresses are essential for frame delivery — the actual transmission of data over Ethernet or Wi-Fi.
+
+Layer 3: IP Addresses (Network Layer)
+
+IP (Internet Protocol) address is a logical address assigned to a device, often dynamically via DHCP.
+It is used for routing data across different networks, including the internet.
+IP addresses help identify the source and destination of data at a global scale.
+
+ Why Both Are Needed
+You might wonder: Why not just use IP addresses since they’re unique and routable?
+Here’s why that doesn’t work:
+IP Alone Can’t Deliver Frames
+IP operates at Layer 3, which is responsible for routing — not physical delivery.
+Network interfaces (NICs) don’t understand IP addresses directly; they need MAC addresses to send and receive frames.
+To send a packet, the system uses ARP (Address Resolution Protocol) to map the destination IP to a MAC address, then encapsulates the IP packet into a frame for delivery.
+
+ MAC Alone Can’t Route Across Networks
+MAC addresses are not routable and only work within the same local network.
+They lack the hierarchical structure needed for scalable routing across the internet.
+##
+
+
+NETWORK PROTOCOLS :
+1. HTTP uses a request-response model. client make requests to servers for resources like
+pages,images or API data
+Server sends back responses like 200 OK(status codes)
+HTTP defines methods like GET,POST,PUT and DELETE that trigger diff opns on the server (CRUD)
+
+2. HTTPS - HTTP +TLS
+encrypted connection achieved by tls
+
+3. HTTP/3 - uses UDP
+4. QUIC
+5. WebSocket - realtime convo,realtime updates -TCP?
+
+ SSL.TLS,HTTPS Explained: 
