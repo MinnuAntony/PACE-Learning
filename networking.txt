@@ -1,0 +1,18 @@
+ 1. networking fundamentals:
+
+part 1 : host,ip address, network
+part 2 : Repeater, hub, bridge, switch, router
+
+host: any device which sends or recieves traffic - eg : computer,lap,phones,printers,servers,cloud servers, iot devices
+host can be clients and servers
+
+ip address: identity of each host to send and recieve packets in the internet
+its 32 bits - divided into 4 octets
+ACME - 10.X.X.X (owns)
+subnet - ?
+
+Network - connection bw hosts
+logical grouping of hosts which require similar connectivity
+networks can contain other networks called subnets
+network connect to other network -  internet
+
