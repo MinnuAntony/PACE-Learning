@@ -1,0 +1,12 @@
+ide used: intellij
+
+  JDK  : Java development Kit : contains tools for running our code
+
+  helloworld.java
+
+  public class Main {
+      public statuc void main(String[] args) {
+            System.out.println("Hello World");
+
+    13.42 mt
+      
