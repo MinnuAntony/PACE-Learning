@@ -16,6 +16,10 @@ to save these dependencies : pip freeze > requirements.txt
 
 pip install -r requirements.txt ( -r means from a file)
 
+collection: single "variable" used to store multiple values.
+list = [] ordered and changeable, duplicates OK
+Set = {} unordered and immutable , but add/remove OK , NO dups
+Tuple = () ordered , unchangeable , dups OK 
 
 
 
