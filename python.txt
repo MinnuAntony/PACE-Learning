@@ -14,6 +14,7 @@ installing packages into venv:
 pip list (shows packages inside venv)
 to save these dependencies : pip freeze > requirements.txt
 
+pip install -r requirements.txt ( -r means from a file)
 
 
 
