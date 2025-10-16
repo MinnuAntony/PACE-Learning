@@ -16,5 +16,188 @@ main is a special func. -> its is the entry point of every java prgm which the j
 inside the () are called the parameters
 
 ---
-20.13
+
+New project: Varibles
+pgm.java:
+
+public class Main {
+    public static void main(String[] args) {
+        String name = "Minnu";
+        int age = 22;
+        int max = Integer.MAX_VALUE;
+        int min = Integer.MIN_VALUE;
+        byte maxByteVal = Byte.MAX_VALUE;
+        byte minByteVal = Byte.MIN_VALUE;
+        long  mynum = 214783648L ;
+        System.out.println("Hello " + name + " age; " + age );
+        System.out.println("max and min "+ max +","+ min);
+        System.out.println("Byte max and min "+ maxByteVal +","+ minByteVal);
+        
+    }
+}
+
+Hello Minnu age; 22
+max and min 2147483647,-2147483648
+Byte max and min 127,-128
+---
+String : datatype that stores string values(text)
+int : integers 
+byte is one of the 8 primitive data types in Java.
+It’s used to store very small integer values (whole numbers).
+
+long: to store gretaer integer values
+short : short int 32k
+
+float : float num = 3.24f  (put f at the end otherwise it willb e treated as double and return error)
+double : double num = 3.56
+Feature	    float 	                               double
+Size	      4 bytes (32 bits)	                     8 bytes (64 bits)
+Precision	  ~6–7 decimal digits	                   ~15–16 decimal digits
+Default Type	Not default (needs suffix f or F)   	Default type for decimals
+Range	±3.4 × 10³⁸                                  	±1.7 × 10³⁰⁸
+
+-------
+
+public class Main {
+    public static void main(String[] args) {
+        char letter = 'a' ;  //single quotes and single character
+        boolean isActive = true ; 
+        System.out.println(letter );
+        System.out.println(isActive);
+        
+    }
+}
+
+-----
+
+# operations:
+
+public class Main {
+    public static void main(String[] args) {
+        int n1 = 5 ;
+        int n2 = 4 ;
+        System.out.println(n1 + n2);
+        System.out.println(n1 / n2);  //displayed as int only; to see float declare n1 or n2 as float
+        
+    }
+}
+
+#postfix increment:
+
+int mynum = 0;
+sop(mynum++);
+sop(mynum);
+
+it first prints "0"
+then "1"
+--------------------
+
+#control flow:
+
+public class Main {
+    public static void main(String[] args) {
+    int num = 10;
+    if (num == 10) {
+        sout("They are equal");
+    } else{
+          sout("Not equal");
+    }    
+  }
+}
+
+---
+public class Main {
+    public static void main(String[] args) {
+    int num = 10;
+    if (num == 10) {
+        sout("They are equal");
+    } else if (num>10){
+          sout("greater than 10");
+    } else {
+          sout("less than 10");
+    }
+  }
+}
+---
+
+logical AND : && 
+logical OR : ||
+
+
+#switch statement: and user input
+
+import java.util.Scanner; //imports the Scanner class from the Java library
+//Scanner helps your program read input from the keyboard, files, etc.
+
+public class Main {
+    public static Scanner scanner = new Scanner(System.in); //create a Scanner object named scanner
+// System.in means standard input, i.e., your keyboard.
+
+
+    public static void main(String[] args) {
+    sout("Enter a day number 0-7 ");
+    int day = scanner.nextInt();
+//scanner.nextInt() waits for the user to type a number (e.g., 1, 3, 7) and press Enter.
+//Whatever the user types is read and converted to an integer.
+//That integer is then stored in the variable day
+
+    switch (day) {
+        case 0:
+            sout("Monday");
+            break;
+        case 1:
+            sout("Tue");
+            break;
+        default :
+            sout("invalid");
+            break;
+     }
+  }
+}
+
+
+#enhanced switch: - no break required
+
+switch (day) {
+   case 0 -> sout("mon");
+   case 1 -> sout("tue");
+}
+
+#user input:
+nextInt()	Only the next integer	42	int 42
+next()	A single word (until a space)  	Minnu Antony	Reads only "Minnu"
+nextLine()	A whole line of text 	Minnu Antony	Reads "Minnu Antony"
+
+⚠️ Common Pitfall
+If you use nextInt() before nextLine(), you might run into a small issue:
+int age = scanner.nextInt();
+String name = scanner.nextLine();  // might skip input!
+
+👉 This happens because nextInt() leaves the newline character (\n) in the input buffer.
+✅ Fix:
+int age = scanner.nextInt();
+scanner.nextLine();  // consume leftover newline
+String name = scanner.nextLine();
+
+---
+
+
+#loop:
+
+public class Main {
+    public static void main(String[] args) {
+        for(int i = 0 ; i <= 10 ; i++){
+            sout("i = ", + i);
+        }
+    }
+}
+
+#break and continue
+#while loop
+int num = 0;
+while (num <=10) {
+    num ++;
+    sout(num);
+}
+//this program prints from 0 to 11
 
