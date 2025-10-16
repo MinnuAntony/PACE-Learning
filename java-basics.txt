@@ -244,7 +244,7 @@ public class Main {
 public class Main {
     public static void main(String[] args) {
 
-        int[] numbers  = {12,15,16,200,20};
+        int[] numbers  = {12,15,16,200,20};s
 
         for (int number : numbers){
             System.out.println(number);
