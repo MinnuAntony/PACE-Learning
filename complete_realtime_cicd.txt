@@ -1,0 +1,27 @@
+jenkins shared library concept:
+shared lib makes jenkins code reusable
+
+maven: compiling appln using maven ->unitt testing -> intgn testing ->maven build -> static codeql using sonarqube -> then 
+final image is build -> maven build
+
+first create a jenkins server , i.e EC2 machine
+install jenkins runs on 8080
+install docker
+sonarQube (9000) 
+is run as a docker container
+
+
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt install openjdk-17-jdk -y
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt update
+sudo apt install jenkins -y
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
