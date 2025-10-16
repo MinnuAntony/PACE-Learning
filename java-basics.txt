@@ -1,12 +1,20 @@
 ide used: intellij
-
   JDK  : Java development Kit : contains tools for running our code
 
   helloworld.java
-
+------------------------------------------------
   public class Main {
       public statuc void main(String[] args) {
             System.out.println("Hello World");
+------------------------------------------------
+public :  is called access modifier- whatever comes after public it will be publicly accessible
+class : every func. in java has to be part of a class
+Main: name of the class
 
-    13.42 mt
-      
+name of the func. = main
+main is a special func. -> its is the entry point of every java prgm which the java compiler looks for
+inside the () are called the parameters
+
+---
+20.13
+
