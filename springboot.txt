@@ -1,1 +1,35 @@
 springboot
+why springboot?
+Enterprise Standard	Most Java microservices in banks, telecom, and enterprise apps use Spring Boot. You’ll be expected to deploy/manage them.
+2. Microservices Architecture	Spring Boot is perfect for microservices — which DevOps pipelines are designed to handle.
+3. CI/CD Integration	Spring Boot apps produce a JAR file → very easy to containerize and deploy automatically.
+4. Cloud Native Support	It integrates easily with Docker, Kubernetes, and cloud environments (AWS ECS/EKS, Azure AKS, etc.)
+5. Observability	Has built-in endpoints (Actuator) for metrics, which tie into DevOps tools like Prometheus, Grafana, etc.
+
+
+to learn:
+How to build the app (mvn clean package or ./gradlew build)
+How to run it (java -jar app.jar)
+How to Dockerize it (write a Dockerfile)
+How to configure it using application.properties or environment variables
+How to monitor it via /actuator/health endpoint
+How to deploy it on servers or Kubernetes
+
+---
+
+app: fitness app that allows you to track runs through REST API
+
+-> an MVC app that talks to the DB
+
+give meta data on spring initilazr-> it will genrate some folders and files with code as as zip file
+
+
+So the best way to kick off a new Spring Boot project is by using the Spring initializer at start.spring.io.
+We're going to create our first project and then we'll go ahead and write some code. So we start off with what is the project type? This is what is the build tool. So
+I mentioned in the prerequisites that it'd be nice to know if you had some experience with
+Java build tools like Maven or Gradle. And this is where those come into play because you need to pick a project type. I'm going to choose Maven. If you want to choose Gradle and you've used that before, there is nothing wrong with that as well. In fact, it's the default. So language, I'm going to pick Java. You can also use Kotlin or Groovy. And then we need to pick the version of Spring Boot that we're going to use. I recommend using the latest stable version, which at the time of this recording is 3.2.3. You can always upgrade this in your application
+
+add dependencies according to your requirement
+
+here we are building a web api talking to a db-> so choose spring web and springboot dev tool
+
