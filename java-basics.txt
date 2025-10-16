@@ -181,7 +181,6 @@ String name = scanner.nextLine();
 
 ---
 
-
 #loop:
 
 public class Main {
@@ -192,7 +191,11 @@ public class Main {
     }
 }
 
-#break and continue
+#break and contin
+
+
+
+ue
 #while loop
 int num = 0;
 while (num <=10) {
@@ -200,4 +203,77 @@ while (num <=10) {
     sout(num);
 }
 //this program prints from 0 to 11
-2.10
+
+
+#functions: aka methods  
+public class Main {
+    public static void main(String[] args) {
+        sayHello();
+    }
+
+    public static void sayHello()    {
+        System.out.println("Hello Minnu");
+    }
+}
+
+#with parame ter:
+public class Main {
+    public static void main(String[] args) {
+        sayHello("john",23);
+        System.out.println(getMax(1,5));
+    }
+
+    public static void sayHello(String name,int age)    {
+        System.out.println("Hello "+name+" ! "+age);
+    }
+
+    public static  int getMax(int n1,int n2){
+        if (n1>n2) {
+            return n1;
+        }
+        else{
+            return n2;
+        }
+    }
+}
+
+-> anything after return statement is unreachable
+-> public static <return type> <function name> 
+
+#arrays:
+public class Main {
+    public static void main(String[] args) {
+
+        int[] numbers  = {12,15,16,200,20};
+
+        for (int number : numbers){
+            System.out.println(number);
+
+        }
+
+        String[] friends = {"joey","rachel","ross","chandler","monica","phoebe"};
+        for (String friend: friends){
+            System.out.println(friend);
+        }
+    }
+}
+
+--
+
+To get length of the array, -> numbers.length
+
+ int[] numbers2 = new int[5];
+        numbers2[0]=1;
+
+arrays have fixed size
+
+
+
+##OOPS
+
+getter?
+setter?
+
+
+
+
