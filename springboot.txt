@@ -49,3 +49,70 @@ test package is there
 pom.xml: contains all the dependencies are declared like spring boot starter.
 
 inside src/main/java/com/example/myApp -> contains the main application class which contains the main method
+
+->While i executed this first stage of app,, i faced issues.
+it was due to the maven set up
+
+
+main() → SpringApplication.run()
+     ↓
+Bootstrap Spring Boot
+     ↓
+Create ApplicationContext
+     ↓
+Scan packages → load beans
+     ↓
+Auto-configure based on classpath
+     ↓
+Start embedded server (if web)
+     ↓
+Notify listeners / run CommandLineRunner
+     ↓
+Application ready to accept requests
+
+---
+package com.example.testApp;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class TestAppApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(TestAppApplication.class, args);
+	}
+
+}
+
+---
+
+package com.example.testApp;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MyClass {
+
+    @GetMapping("abc")
+    public String sayHello(){
+        return "Hello!";
+    }
+
+}
+---
+
+@RestController is an annotation in Spring Boot used to create RESTful web services (APIs).
+It tells Spring:
+“This class will handle web requests (HTTP requests), and every method in it will return data (like text, JSON, etc.) directly to the browser — not an HTML page.”
+It’s actually a combination of two annotations:
+@RestController = @Controller + @ResponseBody
+@Controller → marks it as a web controller
+@ResponseBody → tells Spring to send the method return value directly as the HTTP response body
+
+@GetMapping maps an HTTP GET request to a specific method.
+Think of it like saying:
+“If someone visits this URL (endpoint) using GET, run this method.”
+---
+
