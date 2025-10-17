@@ -33,3 +33,19 @@ add dependencies according to your requirement
 
 here we are building a web api talking to a db-> so choose spring web and springboot dev tool
 
+src code:
+
+its a normal maven project struct. 
+src/main/java contains all the java code
+main package is created based on the meta data we filled in spring initializer.
+main application class is there.
+
+reources contains all the static files or templtes for UI
+we have appln.properties files -> appln.yaml
+test package is there
+
+.maven, .mavencmd are maven wrappers; means you dont have have maven installed on your machine to run this app
+
+pom.xml: contains all the dependencies are declared like spring boot starter.
+
+inside src/main/java/com/example/myApp -> contains the main application class which contains the main method
