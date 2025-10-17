@@ -1,0 +1,19 @@
+Jenkins is  CI tool that allows  continuous development ,test and deployment of newly created codes.
+
+developer->sends code to ci server -> if it passes its send to tester else to developers
+
+Features of Jenkins
+it is a self contained Java-based prgm ready to run with packages for windows,mac os and unix like os
+-easy installation
+-easy configuration
+-plugins
+-extensible
+-distributed
+
+Jenkins Pipeline
+
+Commit your code -> build -> test -> release -> Deploy/Deliver -> PRODUCTION
+
+ARCHITECTURE
+
+CI server -> build server(maven) -> test server  -> pdn server
