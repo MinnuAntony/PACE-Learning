@@ -43,5 +43,84 @@ Test,
 Package, : packaged up
 Deploy   : artifacts sent to registry
 
+| Action                          | Example                                              |
+| ------------------------------- | ---------------------------------------------------- |
+| 🧱 **Build your project**       | Run commands like `mvn clean package` or `npm build` |
+| 🧪 **Run tests**                | Execute `pytest`, `mvn test`, or `go test`           |
+| 🐳 **Build Docker images**      | Run `docker build -t myapp .`                        |
+| 📦 **Push artifacts**           | Push a `.jar` file or Docker image to a registry     |
+| ☸️ **Deploy to Kubernetes**     | Run `kubectl apply -f deployment.yaml`               |
+| 🔄 **Trigger other jobs**       | Tell Jenkins to start another pipeline               |
+| 🧰 **Run custom shell scripts** | Any Linux/Windows command or script                  |
+| 🧹 **Clean workspace**          | Delete old files or logs before build                |
+| 📧 **Send notifications**       | Email or Slack notification on success/failure       |
+
+
 Jenkins UI:
  
+1. creating a freestyle project - job : my_first_job
+worksapce contains the git repo files etc and also any files that we created in the build opyion in ui
+the commands are actaully written in that build stage text box
+
+2. Jenkins FileSystem
+
+from ec2:
+r/lib/jenkins$ 
+ubuntu@ip-172-31-10-23:/var/lib/jenkins$ ls
+config.xml                                      plugins
+hudson.model.UpdateCenter.xml                   queue.xml
+hudson.plugins.git.GitTool.xml                  queue.xml.bak
+identity.key.enc                                secret.key
+jenkins.install.InstallUtil.lastExecVersion     secret.key.not-so-secret
+jenkins.install.UpgradeWizard.state             secrets
+jenkins.model.JenkinsLocationConfiguration.xml  updates
+jenkins.telemetry.Correlator.xml                userContent
+jobs                                            users
+logs                                            workspace
+nodeMonitors.xml
+
+cd workspace/
+ubuntu@ip-172-31-10-23:/var/lib/jenkins/workspace$ ls
+my_first_job
+ubuntu@ip-172-31-10-23:/var/lib/jenkins/workspace$ cd my_first_job/
+ubuntu@ip-172-31-10-23:/var/lib/jenkins/workspace/my_first_job$ ls
+Dockerfile  README.md  backend  package-lock.json  package.json  public  src
+ubuntu@ip-172-31-10-23:/var/lib/jenkins/workspace/my_first_job$ 
+
+3. Writning Jenkins File:
+
+
+pipeline {
+    agent { 
+        node {
+            label 'jenkins-agent-goes-here'
+            }
+      }
+    stages {
+        stage('Build') {
+            steps {
+                echo "Building.."
+                sh '''
+                echo "doing build stuff.."
+                '''
+            }
+        }
+        stage('Test') {
+            steps {
+                echo "Testing.."
+                sh '''
+                echo "doing test stuff.."
+                '''
+            }
+        }
+        stage('Deliver') {
+            steps {
+                echo 'Deliver....'
+                sh '''
+                echo "doing delivery stuff.."
+                '''
+            }
+        }
+    }
+}
+
