@@ -17,3 +17,31 @@ Commit your code -> build -> test -> release -> Deploy/Deliver -> PRODUCTION
 ARCHITECTURE
 
 CI server -> build server(maven) -> test server  -> pdn server
+
+yt vdo: Devops Journey
+-----------------------
+jenkins is an automation platform that allows you to buil,test and deploy s/w using pipelines
+
+Jenkins Infra
+1. Master server -> controls the pipelines and schedules build to agents
+2. Agents ->  performs the build in their workspace
+flow: a dev commits the code to github, the jenkins master becomes aware of this commit, and triggers the appropriate pipeline and distributes the build to one of the agents to run.
+
+The agents are selected based on configured labels (via jenkins UI)
+
+Agent types: 
+1. Permanent Agents
+2. Cloud Agents - docker,k8s, etc also ec2 fleet
+
+2 main build jobs: 
+1. freestyle build projects (easy and shell scripting)
+2. pipelines(uses jenkins files written using groovy syntax
+  they are broken into different stages like 
+CLone, : cloning repo
+Build, : genrates jar or some executable file
+Test, 
+Package, : packaged up
+Deploy   : artifacts sent to registry
+
+Jenkins UI:
+ 
